@@ -7,11 +7,13 @@ namespace Backend.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int OrderId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        [ForeignKey("Клиент")]
-        public int ID_Client { get; set; }
+        public int ClientID { get; set; }
+
+        [ForeignKey(nameof(ClientID))]
+        public Client Client { get; set; } = null!;
         
         [Required]
         public DateTime Date { get; set; }

@@ -8,15 +8,19 @@ namespace Backend.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int OrderItemId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        [ForeignKey("Заказы")]
-        public int OrderID { get; set; }
+        public int OrderId { get; set; }
+
+        [ForeignKey(nameof(OrderId))]
+        public Order Order { get; set; } = null!;
 
         [Required]
-        [ForeignKey("Товары")]
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
+
+        [ForeignKey(nameof(ProductId))]
+        public Product Product { get; set; } = null!;
 
         [Required]
         public int Count { get; set; }

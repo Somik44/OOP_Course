@@ -7,7 +7,7 @@ namespace Backend.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int ClientID { get; set; }
+        public int ID { get; set; }
 
         [Required]
         public string Name { get; set; } = string.Empty;
@@ -16,6 +16,6 @@ namespace Backend.Models
         public float Balance { get; set; }
 
         [Required]
-        public string Password { get; set; } = "0000";
+        public string Password { get; set; }
     }
 }
