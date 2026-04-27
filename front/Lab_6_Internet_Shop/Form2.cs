@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lab_6_Internet_Shop.DTO;
 
 namespace Lab_6_Internet_Shop
 {
@@ -18,7 +19,7 @@ namespace Lab_6_Internet_Shop
         /// <summary>
         /// Текущий аккаунт пользователя
         /// </summary>
-        private Account account;
+        private ClientInfoDto _client;
 
         /// <summary>
         /// Событие запроса авторизации
@@ -36,27 +37,17 @@ namespace Lab_6_Internet_Shop
         }
 
         /// <summary>
-        /// Конструктор формы аккаунта с предустановленным аккаунтом
-        /// </summary>
-        /// <param name="account">Аккаунт пользователя</param>
-        public Form2(Account account) : this()
-        {
-            SetAccount(account);
-        }
-
-        /// <summary>
         /// Установка текущего аккаунта
         /// </summary>
         /// <param name="account">Аккаунт пользователя</param>
-        public void SetAccount(Account account)
+        public void SetAccount(ClientInfoDto client)
         {
-            this.account = account;
-
-            if (account != null)
+            _client = client;
+            if (client != null)
             {
                 ShowUserInterface();
-                Name_Text.Text = account.Name;
-                RefreshListBox();
+                Name_Text.Text = client.Name;
+                RefreshPurchases();
             }
             else
             {
@@ -71,7 +62,6 @@ namespace Lab_6_Internet_Shop
         {
             loginPromptLabel.Visible = true;
             loginButton.Visible = true;
-
             Purchases.Visible = false;
             Purch_text.Visible = false;
             Name_Text.Visible = false;
@@ -105,35 +95,32 @@ namespace Lab_6_Internet_Shop
         /// </summary>
         public void RefreshPurchases()
         {
-            if (account != null)
+            if (_client != null && _client.Orders != null)
             {
-                RefreshListBox();
-            }
-        }
+                var allPurchases = _client.Orders
+                    .SelectMany(o => o.Items.Select(i => new DisplayPurchase
+                    {
+                        Name = i.ProductName,
+                        Description = $"{i.ProductName} - {i.Count} шт. по {i.PriceAtPurchase} руб. (заказ от {o.Date})"
+                    }))
+                    .ToList();
 
-        /// <summary>
-        /// Обновление ListBox с покупками
-        /// </summary>
-        private void RefreshListBox()
-        {
-            if (account != null)
-            {
                 Purchases.DataSource = null;
-                Purchases.DataSource = account.get_list();
+                Purchases.DataSource = allPurchases;
                 Purchases.DisplayMember = "Name";
             }
+            else
+            {
+                Purchases.DataSource = null;
+                Purch_text.Text = "История покупок пуста";
+            }
         }
 
-        /// <summary>
-        /// Обработчик изменения выбранной покупки
-        /// </summary>
-        /// <param name="sender">Источник события</param>
-        /// <param name="e">Данные события</param>
         private void Purchases_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (account != null && Purchases.SelectedIndex != -1)
+            if (_client != null && Purchases.SelectedItem is DisplayPurchase selected)
             {
-                Purch_text.Text = account.get_list()[Purchases.SelectedIndex].get_Description();
+                Purch_text.Text = selected.Description;
             }
             else
             {
@@ -141,6 +128,11 @@ namespace Lab_6_Internet_Shop
             }
         }
 
+        private class DisplayPurchase
+        {
+            public string Name { get; set; }
+            public string Description { get; set; }
+        }
         /// <summary>
         /// Обработчик загрузки формы
         /// </summary>

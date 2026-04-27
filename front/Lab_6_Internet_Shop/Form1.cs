@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using Lab_6_Internet_Shop.DTO;
 using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -10,23 +11,17 @@ namespace Lab_6_Internet_Shop
     public partial class Form1 : Form
     {
 
-        private List<Product> products = new List<Product> {
-            new TV("Samsung U2", 150000, 85),
-            new TV("Sony M15", 40000, 42),
-            new PC("Ardor S1", 80000, "Intel Core I7-11700f")
-        };
+        private ApiService _api;
 
-        private List<Account> accounts = new List<Account>
-        {
-            new Account("login1", "1234", "Вася Петров", 200000),
-            new Account("login2", "1111", "Иван Пузан", 85000)
-        };
+        private List<ProductDto> _currentProducts;
 
-        private Form2 form2;
+        private ClientInfoDto _currentClient;
 
-        private bool isForm2Initialized = false;
+        private Form2 _form2;
 
-        Account now_account;
+        private bool _isForm2Initialized;
+
+
 
         /// <summary>
         /// Конструктор главной формы
@@ -34,12 +29,11 @@ namespace Lab_6_Internet_Shop
         public Form1()
         {
             InitializeComponent();
-            RefreshListBox();
-
-            this.Text = "DNS";
-
+            _api = new ApiService();
             Products.SelectedIndexChanged += Products_SelectedIndexChanged;
+
             InitializeForm2();
+            this.Load += Form1_Load;
         }
 
         /// <summary>
@@ -47,28 +41,27 @@ namespace Lab_6_Internet_Shop
         /// </summary>
         private void InitializeForm2()
         {
-            form2 = new Form2();
-            form2.TopLevel = false;
-            form2.FormBorderStyle = FormBorderStyle.None;
-            form2.Dock = DockStyle.Fill;
-
-            form2.LoginRequested += Form2_LoginRequested;
-            Acc_tab.Controls.Add(form2);
-            form2.Show();
-            isForm2Initialized = true;
+            _form2 = new Form2();
+            _form2.TopLevel = false;
+            _form2.FormBorderStyle = FormBorderStyle.None;
+            _form2.Dock = DockStyle.Fill;
+            _form2.LoginRequested += Form2_LoginRequested;
+            Acc_tab.Controls.Add(_form2);
+            _form2.Show();
+            _isForm2Initialized = true;
         }
 
         /// <summary>
         /// Обработчик запроса на авторизацию
         /// </summary>
-        private void Form2_LoginRequested()
+        private async void Form2_LoginRequested()
         {
-            using (Form3 log = new Form3(accounts))
+            using (Form3 loginForm = new Form3())
             {
-                if (log.ShowDialog() == DialogResult.OK)
+                if (loginForm.ShowDialog() == DialogResult.OK)
                 {
-                    now_account = accounts[log.get_index()];
-                    form2.SetAccount(now_account);
+                    _currentClient = loginForm.LoggedInClient;
+                    _form2.SetAccount(_currentClient);
                 }
             }
         }
@@ -76,10 +69,11 @@ namespace Lab_6_Internet_Shop
         /// <summary>
         /// Обновление списка товаров
         /// </summary>
-        private void RefreshListBox()
+        private async Task RefreshProducts()
         {
+            _currentProducts = await _api.GetProductsAsync();
             Products.DataSource = null;
-            Products.DataSource = products;
+            Products.DataSource = _currentProducts;
             Products.DisplayMember = "Name";
         }
 
@@ -90,9 +84,10 @@ namespace Lab_6_Internet_Shop
         /// <param name="e">Данные события</param>
         private void Products_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Products.SelectedIndex != -1)
+            if (Products.SelectedIndex != -1 && _currentProducts != null)
             {
-                Description.Text = products[Products.SelectedIndex].get_Description();
+                var product = _currentProducts[Products.SelectedIndex];
+                Description.Text = product.Description; // у товара есть описание
             }
             else
             {
@@ -100,54 +95,67 @@ namespace Lab_6_Internet_Shop
             }
         }
 
+
         /// <summary>
         /// Обработчик нажатия кнопки покупки
         /// </summary>
         /// <param name="sender">Источник события</param>
         /// <param name="e">Данные события</param>
-        private void buy_button_Click(object sender, EventArgs e)
+        private async void buy_button_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (isForm2Initialized && Products.SelectedIndex != -1)
-                {
-                    var selectedProduct = products[Products.SelectedIndex];
-
-                    if (!now_account.CanAfford(selectedProduct.Price))
-                    {
-                        MessageBox.Show("Недостаточно средств на счете!");
-                        return;
-                    }
-
-                    if (now_account.DeductBalance(selectedProduct.Price))
-                    {
-                        now_account.add_Purchases(new Purchase(selectedProduct.Name, selectedProduct.Price));
-                        MessageBox.Show($"Куплен {selectedProduct.Name}");
-                        form2.RefreshPurchases();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ошибка при списании средств!");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Товар не выбран!");
-                }
-            }
-            catch (NullReferenceException)
+            if (_currentClient == null)
             {
                 MessageBox.Show("Войдите в аккаунт!");
+                return;
+            }
+            if (Products.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите товар!");
+                return;
+            }
+
+            var selectedProduct = _currentProducts[Products.SelectedIndex];
+            // Для простоты покупаем 1 штуку. Позже можете добавить NumericUpDown.
+            var items = new List<(int productId, int count)>
+        {
+            (selectedProduct.Id, 1)
+        };
+
+            bool success = await _api.PurchaseAsync(_currentClient.Id, items);
+            if (success)
+            {
+                MessageBox.Show($"Товар \"{selectedProduct.Name}\" куплен!");
+                // Обновляем данные клиента (баланс, покупки) и список товаров
+                await RefreshClientData();
+                await RefreshProducts();
+                _form2.RefreshPurchases(); // обновить список покупок в Form2
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при покупке. Возможно, недостаточно средств или товара.");
             }
         }
+
+        private async Task RefreshClientData()
+        {
+            // Получаем свежие данные клиента с сервера
+            var updatedClient = await _api.GetClientInfoAsync(_currentClient.Id);
+            if (updatedClient != null)
+            {
+                _currentClient = updatedClient;
+                _form2.SetAccount(_currentClient);
+            }
+        }
+
 
         /// <summary>
         /// Обработчик загрузки формы
         /// </summary>
         /// <param name="sender">Источник события</param>
         /// <param name="e">Данные события</param>
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
+            await RefreshProducts();
         }
     }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lab_6_Internet_Shop.DTO;
 
 namespace Lab_6_Internet_Shop
 {
@@ -15,21 +16,17 @@ namespace Lab_6_Internet_Shop
     /// </summary>
     public partial class Form3 : Form
     {
-        /// <summary>
-        /// Список зарегистрированных аккаунтов
-        /// </summary>
-        private List<Account> accounts;
-
-        private int index = -1;
+        private ApiService _api;
+        public ClientInfoDto LoggedInClient { get; private set; }
 
         /// <summary>
         /// Конструктор формы авторизации
         /// </summary>
         /// <param name="accounts">Список аккаунтов для проверки</param>
-        public Form3(List<Account> accounts)
+        public Form3()
         {
             InitializeComponent();
-            this.accounts = accounts;
+            _api = new ApiService();
 
             textBox1.Enter += textBox1_Enter;
             textBox1.Leave += textBox1_Leave;
@@ -52,26 +49,22 @@ namespace Lab_6_Internet_Shop
         /// </summary>
         /// <param name="sender">Источник события</param>
         /// <param name="e">Данные события</param>
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            bool checker = false;
+            string login = textBox1.Text;
+            string password = textBox2.Text;
 
-            for (int i = 0; i < accounts.Count; i++)
+            var client = await _api.LoginAsync(login, password);
+            if (client != null)
             {
-                if (accounts[i].Login == textBox1.Text && accounts[i].Password == textBox2.Text)
-                {
-                    checker = true;
-                    index = i;
-                    break;
-                }
-            }
-
-            if (checker)
-            {
+                LoggedInClient = client;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            else MessageBox.Show("Не верный логин или пароль!!!");
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль!");
+            }
         }
 
         /// <summary>
@@ -83,15 +76,6 @@ namespace Lab_6_Internet_Shop
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
-        }
-
-        /// <summary>
-        /// Получение индекса авторизованного пользователя
-        /// </summary>
-        /// <returns>Индекс пользователя в списке аккаунтов</returns>
-        public int get_index()
-        {
-            return index;
         }
 
         /// <summary>

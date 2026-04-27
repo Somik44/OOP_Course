@@ -3,36 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|c:\\users\\\u043C\u0438\u0445\u0430\u0438\u043B\\desktop\\\u0443\u0447\u0435\u0431\u0430\\c#\\oop_course\\oop_course\\back\\backend\\backend\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DCFD5B-4BA5-4C28-9809-ECA7415C46B4}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,106 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Backend\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Backend\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowFkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T12:25:07.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Backend\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Backend\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-22T15:43:21.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Backend\\Program.cs",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Program.cs",
-              "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAVAAAAAAAAAA==",
+              "Title": "ClientsController.cs",
+              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Controllers\\ClientsController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\ClientsController.cs",
+              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Controllers\\ClientsController.cs*",
+              "RelativeToolTip": "Backend\\Controllers\\ClientsController.cs*",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAwD8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T12:12:58.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Backend\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Backend\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T19:50:55.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Models\\OrderItem.cs",
-              "RelativeDocumentMoniker": "Backend\\Models\\OrderItem.cs",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Models\\OrderItem.cs",
-              "RelativeToolTip": "Backend\\Models\\OrderItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T19:24:43.767Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Models\\Client.cs",
-              "RelativeDocumentMoniker": "Backend\\Models\\Client.cs",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Models\\Client.cs",
-              "RelativeToolTip": "Backend\\Models\\Client.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T19:21:37.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "Backend\\Models\\Order.cs",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Models\\Order.cs",
-              "RelativeToolTip": "Backend\\Models\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T19:21:09.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Backend\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\\u041C\u0438\u0445\u0430\u0438\u043B\\Desktop\\\u0443\u0447\u0435\u0431\u0430\\C#\\OOP_course\\OOP_Course\\back\\Backend\\Backend\\Models\\Product.cs",
-              "RelativeToolTip": "Backend\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T19:20:27.391Z",
+              "WhenOpened": "2026-04-27T12:39:42.985Z",
               "EditorCaption": ""
             }
           ]
