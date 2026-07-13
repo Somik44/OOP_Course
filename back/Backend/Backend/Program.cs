@@ -46,9 +46,6 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = "swagger";
 });
 
-
-app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
