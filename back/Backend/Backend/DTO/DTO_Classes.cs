@@ -11,7 +11,6 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public float Balance { get; set; }
-        // Список покупок (заказов)
         public List<OrderDto> Orders { get; set; }
     }
 
