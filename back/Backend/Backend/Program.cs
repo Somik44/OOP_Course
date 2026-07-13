@@ -7,7 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 
-builder.Services.AddEndpointsApiExplorer(); // необходимо для минимальных API (если используются)
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
@@ -20,7 +20,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-//строка конфигурации
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connection));
@@ -30,7 +29,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    dbContext.Database.EnsureDeleted(); // осторожно: удаляет существующую БД!
+    dbContext.Database.EnsureDeleted();
     dbContext.Database.EnsureCreated();
 }
 
